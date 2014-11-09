@@ -5,7 +5,7 @@
 	<Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
 	<ProductVersion>10.0.20506</ProductVersion>
 	<SchemaVersion>2.0</SchemaVersion>
-	<ProjectGuid>{ECD85C7D-C160-C847-C4B2-6DDECE8B141B}</ProjectGuid>
+	<ProjectGuid>{55CF4779-61DE-B1ED-62E8-A2CE271FE18B}</ProjectGuid>
 	<OutputType>Library</OutputType>
 	<AppDesignerFolder>Properties</AppDesignerFolder>
 	<RootNamespace></RootNamespace>
@@ -46,6 +46,7 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Parallaxing.cs" />
      <Compile Include="Assets\Sample Assets\2D\Scripts\Camera2DFollow.cs" />
      <Compile Include="Assets\Sample Assets\2D\Scripts\CameraFollow.cs" />
      <Compile Include="Assets\Sample Assets\2D\Scripts\Platformer2DUserControl.cs" />
