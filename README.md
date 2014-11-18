@@ -1,4 +1,4 @@
 GleneagleDevClub
 ================
 
-Gleneage Game Development Club
+Gleneagle Game Development Club
