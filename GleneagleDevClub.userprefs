@@ -1,10 +1,11 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\PlayerHealth.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\BossHealth.cs">
     <Files>
       <File FileName="Assets\Sample Assets\2D\Scripts\Platformer2DUserControl.cs" Line="22" Column="7" />
       <File FileName="Assets\Sample Assets\2D\Scripts\PlatformerCharacter2D.cs" Line="11" Column="15" />
-      <File FileName="Assets\Scripts\PlayerHealth.cs" Line="55" Column="29" />
+      <File FileName="Assets\Scripts\PlayerHealth.cs" Line="39" Column="25" />
+      <File FileName="Assets\Scripts\BossHealth.cs" Line="25" Column="37" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
