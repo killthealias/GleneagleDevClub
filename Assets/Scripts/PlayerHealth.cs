@@ -17,21 +17,23 @@ public class PlayerHealth : MonoBehaviour {
 	void Update () {
 		adjustCurrentHealth (0);
 	}
-
+	
 	void OnGUI(){
 		InitStyles();
 		Camera cam = Camera.main;
 		Vector3 targetPos = cam.WorldToScreenPoint(target.position);
-		GUI.Box(new Rect(targetPos.x - healthbarwidth/2 / (maxHealth / curHealth), Screen.height - targetPos.y - 27, 30 / (maxHealth / curHealth), 5), "", currentStyle);
+		if(healthBarLength >= 3){
+			GUI.Box(new Rect((targetPos.x - healthBarLength/2)-2, Screen.height - targetPos.y - 35, healthBarLength, 5), "", currentStyle);
+		}
 	}
 	private void InitStyles()
 	{
-			currentStyle = new GUIStyle( GUI.skin.box );
-			if(curHealth > 50){
-				currentStyle.normal.background = MakeTex( 2, 2, new Color( 0f, 1f, 0f, 0.5f ) );
-			}else{
-				currentStyle.normal.background = MakeTex( 2, 2, new Color( 1f, 0f, 0f, 0.5f ) );
-			}
+		currentStyle = new GUIStyle( GUI.skin.box );
+		if(curHealth > 50){
+			currentStyle.normal.background = MakeTex( 2, 2, new Color( 0f, 1f, 0f, 0.5f ) );
+		}else{
+			currentStyle.normal.background = MakeTex( 2, 2, new Color( 1f, 0f, 0f, 0.5f ) );
+		}
 	}
 	
 	private Texture2D MakeTex( int width, int height, Color col )
@@ -46,7 +48,7 @@ public class PlayerHealth : MonoBehaviour {
 		result.Apply();
 		return result;
 	}
-
+	
 	public void adjustCurrentHealth(int adj){
 		curHealth += adj;
 		if(curHealth < 0){

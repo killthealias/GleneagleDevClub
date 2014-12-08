@@ -22,7 +22,9 @@ public class BossHealth : MonoBehaviour {
 		InitStyles();
 		Camera cam = Camera.main;
 		Vector3 targetPos = cam.WorldToScreenPoint(target.position);
-		GUI.Box(new Rect((targetPos.x - (90 / (maxHealth / curHealth)) / 2) - 5, Screen.height - targetPos.y - 35, 90 / (maxHealth / curHealth), 5), "", currentStyle);
+		if (healthBarLength >= 9) {
+			GUI.Box (new Rect ((targetPos.x - healthBarLength / 2) - 4, Screen.height - targetPos.y - 35, healthBarLength, 5), "", currentStyle);
+		}
 	}
 	private void InitStyles()
 	{

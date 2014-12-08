@@ -53,6 +53,8 @@
      <Compile Include="Assets\Sample Assets\2D\Scripts\Restarter.cs" />
      <Compile Include="Assets\Scripts\BossHealth.cs" />
      <Compile Include="Assets\Scripts\EnemyAI.cs" />
+     <Compile Include="Assets\Scripts\EnemyAttack.cs" />
+     <Compile Include="Assets\Scripts\PlayerAttack.cs" />
      <Compile Include="Assets\Scripts\PlayerHealth.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
