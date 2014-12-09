@@ -23,7 +23,7 @@ public class PlayerHealth : MonoBehaviour {
 		Camera cam = Camera.main;
 		Vector3 targetPos = cam.WorldToScreenPoint(target.position);
 		if(healthBarLength >= 3){
-			GUI.Box(new Rect((targetPos.x - healthBarLength/2)-2, Screen.height - targetPos.y - 35, healthBarLength, 5), "", currentStyle);
+			GUI.Box(new Rect((targetPos.x - healthBarLength/2)-2, Screen.height - targetPos.y - 45, healthBarLength, 5), "", currentStyle);
 		}
 	}
 	private void InitStyles()

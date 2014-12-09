@@ -24,13 +24,10 @@ public class EnemyAttack : MonoBehaviour {
 		}
 		if (attackTimer < 0) {
 			attackTimer = 0;
-			anim.SetBool("Attacking", false);
-		}
-		if (attackTimer == 1) {
-
 		}
 		if(attackTimer == 0){
 			Attack();
+			StartCoroutine(Wait (0.6f));
 			attackTimer = coolDown;
 		}
 
@@ -42,24 +39,42 @@ public class EnemyAttack : MonoBehaviour {
 		Vector2 dir = (target.transform.position - transform.position).normalized;
 		float direction = Vector2.Dot(dir, transform.right);
 		if (distance < 2f) {
+			anim.SetBool("Attacking", true);
 			PlayerHealth hp = (PlayerHealth)target.GetComponent ("PlayerHealth");
 			hp.adjustCurrentHealth (-10);
-
-			if(direction > 0){
-				target.rigidbody2D.mass = 0.1f;
-				target.rigidbody2D.AddForce(new Vector2(500, 10));
-				StartCoroutine(Wait ());
-			}else if(direction < 0){
-				target.rigidbody2D.mass = 0.1f;
-				target.rigidbody2D.AddForce(new Vector2(-500,10));
-				StartCoroutine(Wait ());
+			target.GetComponent<Animator>().SetFloat("Health", hp.curHealth);
+			if(hp.curHealth <= 0){
+				target.rigidbody2D.isKinematic = true;
+				Vector3 temp = new Vector3(0,-7.5f,0);
+				target.transform.position = temp;
+				StartCoroutine(StopGame ());
+			}else{
+			target.GetComponent<Animator>().SetBool("Hurt", true);
+			StartCoroutine(WaitAnim (0.5f));
+			}
+			if(target.transform.position.x > transform.position.x){
+				//on left, so push right
+				target.rigidbody2D.AddForce(new Vector2(5000, 100));
+			}else if(target.transform.position.x < transform.position.x){
+				//on right, so push left
+				target.rigidbody2D.AddForce(new Vector2(-5000,100));
 			}
 
 		}
 	}
-	IEnumerator Wait () 
+	IEnumerator Wait (float time) 
 	{
-		yield return new WaitForSeconds(0.07f);
-		target.rigidbody2D.mass = 1f;
+		yield return new WaitForSeconds(time);
+		anim.SetBool("Attacking", false);
+	}
+	IEnumerator WaitAnim (float time) 
+	{
+		yield return new WaitForSeconds(time);
+		target.GetComponent<Animator>().SetBool("Hurt", false);
+	}
+	IEnumerator StopGame () 
+	{
+		yield return new WaitForSeconds(2.4f);
+		Time.timeScale = 0;
 	}
 }

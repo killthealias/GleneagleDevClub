@@ -12,8 +12,6 @@ public class EnemyAI : MonoBehaviour {
 	}
 	// Use this for initialization
 	void Start () {
-		GameObject go = GameObject.FindGameObjectWithTag("Player");
-		target = go.transform;
 		anim = GetComponent<Animator>();
 		
 	}
