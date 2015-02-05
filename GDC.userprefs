@@ -1,8 +1,9 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Controller.js">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\JumpScript.js">
     <Files>
-      <File FileName="Assets\Scripts\Controller.js" Line="21" Column="29" />
+      <File FileName="Assets\Scripts\Controller.js" Line="2" Column="1" />
+      <File FileName="Assets\Scripts\JumpScript.js" Line="4" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
